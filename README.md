@@ -3,11 +3,11 @@
 OCaml bindings with Zarith integers and a C bridge to abi-typegen-runtime.
 
 Includes bindings for 29 public system contracts and `canonical.json` with chain
-configuration and addresses. Generated with exact **abi-typegen 0.8.0**.
+configuration and addresses. Generated with exact **abi-typegen 0.9.1**.
 
 ## Regenerate
 
-Install [abi-typegen 0.8.0](https://github.com/doublesharp/abi-typegen/releases/tag/v0.8.0)
+Install [abi-typegen 0.9.1](https://github.com/doublesharp/abi-typegen/releases/tag/v0.9.1)
 and compile the Diesis contracts. From this repository:
 
 ```sh
@@ -25,7 +25,7 @@ Set `ABI_TYPEGEN` to select a binary explicitly. Other versions are rejected.
 Compilation requires OCaml, ocamlfind, and Zarith. Compile each generated `.ml`
 with `ocamlfind ocamlc -package zarith -c`, then compile its `.ocaml.c` bridge.
 Link the selected modules and bridges with `-custom -package zarith -linkpkg`
-and `libabi_typegen_runtime` from the abi-typegen-runtime 0.8.0 build. Addresses and
+and `libabi_typegen_runtime` from the abi-typegen-runtime 0.9.1 build. Addresses and
 bytes are raw strings. Integers use `Z.t`.
 
 

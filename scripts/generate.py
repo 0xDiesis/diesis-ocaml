@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Regenerate contract bindings with the pinned abi-typegen release."""
-from typegen_inputs import ordered_artifacts
 
 import argparse
 import json
@@ -26,6 +25,4 @@ command = [binary, "generate", "--artifacts", str(Path(os.environ.get("DIESIS_AR
            "--out", str(root / "generated")]
 if args.check:
     command.append("--check")
-with ordered_artifacts(Path(command[3]), config["contracts"]) as inputs:
-    command[3] = str(inputs)
-    subprocess.run(command, check=True)
+subprocess.run(command, check=True)
